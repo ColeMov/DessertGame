@@ -6,23 +6,48 @@
       background-color: chocolate;
       border-color: chocolate;
       position: absolute;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+    button:hover {
+      background-color: blue;
+      color: white;
+    }
+    p {
+      font-weight: 800;
     }
     body {
       background-color: SandyBrown;
-
     }
   </style><script>
-    function randomizeButtonPositions() {
-      var buttons = document.querySelectorAll("FIXME");
+  var score = 0; 
+  function randomizeButtonPositions() {
+      var buttons = document.querySelectorAll("button");
+      document.querySelectorAll("#scoreOutput")[0].innerHTML = score;
       buttons.forEach( (b) => {
         b.style.left = (Math.random()*80+10)+"%";
         b.style.top = (Math.random()*80+10)+"%";
       } );
     }
+    function handleDessertClick() {
+      score++;
+      randomizeButtonPositions();
+    }
+    function handleDesertClick(){
+      score--;
+      randomizeButtonPositions();
+    }
   </script>
-  <meta name="author" content="YOUR_NETID">
+  <meta name="author" content="movsessian">
   </head>
   <body onload="randomizeButtonPositions()">  
-    <p>Score: 0</p>
-    <button>Dessert</button>
+    <p>Score: <span id="scoreOutput"></span></p>
+    <button onClick = "handleDessertClick()">Dessert</button>
+    <button onClick = "handleDesertClick()">Desert</button>
+    <button onClick = "handleDesertClick()">Desert</button>
+    <button onClick = "handleDesertClick()">Desert</button>
+    <button onClick = "handleDesertClick()">Desert</button>
+    <button onClick = "handleDesertClick()">Desert</button>
+    <button onClick = "handleDesertClick()">Desert</button>
+    <button onClick = "handleDesertClick()">Desert</button>
 </body></html>
